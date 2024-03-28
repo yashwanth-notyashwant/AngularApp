@@ -1,11 +1,11 @@
-import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [HomeComponent,RouterModule],
   template: `
     <main>
       <a [routerLink]="['/']">
@@ -17,8 +17,9 @@ import { HomeComponent } from './home/home.component';
           />
         </header>
       </a>
+
       <section class="content">
-        <app-home></app-home>
+        <router-outlet></router-outlet>
       </section>
     </main>
   `,
@@ -27,5 +28,3 @@ import { HomeComponent } from './home/home.component';
 export class AppComponent {
   title = 'Title';
 }
-
-// <router-outlet></router-outlet>;
